@@ -1,0 +1,22 @@
+name: Linux Build
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Verificar sistema operacional
+        run: uname -a
+
+      - name: Compilar script
+        run: |
+          echo "exemplo de build em runner linux"
+          
