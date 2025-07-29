@@ -1,21 +1,24 @@
-name: first-pipeline
+name: build-windows-manual
 
 on:
- workflow_dispatch:
- push:
-  branches:
-   - main
+  workflow_dispatch:  # permite execução manual
+
 jobs:
- first-job:
-  name: "primeiro job"
-  runs-on: windows_latest
-  steps:
-   - name: "primeira acao"
-     run: systeminfo
-   - name: "Exibir informações do sistema"
-     run: |
+  build:
+    runs-on: windows-latest  # aqui é o runner Windows
+    
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Exibir informações do sistema
+        run: systeminfo
+
+      - name: Compilar (exemplo)
+        run: |
           echo "Rodando em ambiente Windows"
           dir
+
       
  
 
