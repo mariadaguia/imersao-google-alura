@@ -1,0 +1,21 @@
+name: first-pipeline
+
+on:
+ workflow_dispatch:
+ push:
+  branches:
+   - main
+jobs:
+ first-job:
+  name: "primeiro job"
+  runs-on: windows_latest
+  steps:
+   - name: "primeira acao"
+     run: systeminfo
+   - name: "Exibir informações do sistema"
+     run: |
+          echo "Rodando em ambiente Windows"
+          dir
+      
+ 
+
